@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Heart Disease</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+   .navbar a:hover{
+    background-color: #000000 !important;
+
+   }
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+}
+
+.form {
+  background-color: #15172b;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 500px;
+  padding: 20px;
+  width: 320px;
+}
+
+form{
+  text-align: center;
+  background-color: #892CDC;
+  padding: 20px;
+  align-items: center;
+  width: 40%;
+  margin: 0 auto;
+  border-radius: 15px;
+  
+
+}
+
+
+input{
+  padding: 6px;
+  border-radius: 4px;
+}
+
+textarea{
+  padding: 10px;
+}
+
+label{
+  color: white;
+  font-size: 16px;
+}
+
+</style>
+<body style="background-color: #222222;">
+
+<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #52057B;">
+  <div class="container-fluid" >
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#" style="color:white;">Diagnoziz</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="#" style="color:white;">Home</a></li>
+      <li><a href="{{url_for('heart')}}" style="color:white;">Heart</a></li>
+
+    </ul>
+  </div>
+</nav>
+<br>
+<br>
+
+  
+<div class="container">
+  <img src="/static/heart.jpeg" style="width: 300px;height: 300px;">
+</div>
+<br>
+<br>
+
+
+
+<div class="container">
+  <form method = 'POST' action='/heart'>
+
+    <div class="form-group">
+      <label for="gender">Gender</label><br>
+      <input type="radio" id="m" name="gender" value=1>
+      <label for="gender" style="color:#52057B;">Male</label>
+      <input type="radio" id="f" name="gender" value=0>
+      <label for="gender" style="color:#52057B;">Female</label><br>
+      </div>
+      <hr>
+
+      <br>
+    <div class="form-group" style="text-align:center;">
+      <label for="age">Age</label>
+      <input type="age"  class="form-control" id="age" placeholder="Enter age" name="age">
+    </div>
+    <br>
+    <hr>
+
+    <div class="form-group">
+      <label for="pain_type">Pain type</label><br>
+      <input type="radio" id="1" name="pain_type" value=0>
+      <label for="pain_type" style="color:#52057B;">Typical Angina</label>
+      <br>
+      <input type="radio" id="2" name="pain_type" value=1>
+      <label for="pain_type" style="color:#52057B;">Atypical angina</label>
+      <br>
+      <input type="radio" id="3" name="pain_type" value=2>
+      <label for="pain_type" style="color:#52057B;">Non anginal pain</label>
+      <br>
+      <input type="radio" id="4" name="pain_type" value=3>
+      <label for="pain_type" style="color:#52057B;">Asymptomatic</label>
+      </div>
+
+      <br>
+      <hr>
+
+    <div class="form-group">
+      <label for="bp">Resting blood pressure</label>
+      <input type="number" class="form-control" id="bp" placeholder="Enter B.P in mm/Hg" name="bp" >
+    </div>
+    <br>
+    <hr>
+
+    <div class="form-group">
+      <label for="cholesterol">Serum cholesterol</label>
+      <input type="number" class="form-control" id="cholesterol" placeholder="Enter Serum cholesterol in mg/dl" name="cholesterol" >
+    </div>
+    <br>
+    <hr>
+
+    <div class="form-group">
+      <label for="sugar">Fasting blood sugar > 120 mg/dl?</label><br>
+      <input type="radio" id="yes" name="sugar" value=1>
+      <label for="sugar" style="color:#52057B;">Yes</label>
+      <input type="radio" id="no" name="sugar" value=0>
+      <label for="sugar" style="color:#52057B;">no</label><br><hr>
+      </div>
+      
+
+      <div class="form-group">
+        <label for="restecg">Resting ecg</label><br>
+        <input type="radio" id="0" name="restecg" value=0>
+        <label for="restecg" style="color:#52057B;">Normal</label>
+        <br>
+        <input type="radio" id="1" name="restecg" value=1>
+        <label for="restecg" style="color:#52057B;">ST-T wave abnormality</label>
+        <br>
+        <input type="radio" id="2" name="restecg" value=2>
+        <label for="restecg" style="color:#52057B;">Left ventricular hypertrophy</label>
+        <br>
+        <hr>
+        </div>
+
+        <div class="form-group">
+          <label for="heart_rate">Maximum heart rate acheived</label>
+          <input type="number" class="form-control" id="heart_rate" placeholder="Enter max heart rate" name="heart_rate" >
+        </div>
+        <br>
+        <hr>
+
+
+        <div class="form-group">
+          <label for="exang">Exercise induced angina?</label><br>
+          <input type="radio" id="yes" name="exang" value=1>
+          <label for="exang" style="color:#52057B;">Yes</label>
+          <input type="radio" id="no" name="exang" value=0>
+          <label for="exang" style="color:#52057B;">no</label><br><hr>
+          </div>
+
+
+          <div class="form-group">
+            <label for="oldpeak">Oldpeak</label>
+            <input type="number" step="any" class="form-control" id="oldpeak" placeholder="ST depression induced by exercise" name="oldpeak" >
+          </div>
+          <br>
+          <hr>
+
+
+          <div class="form-group">
+            <label for="slope">Slope of ST segment</label><br>
+            <input type="radio" id="0" name="slope" value=1>
+            <label for="slope" style="color:#52057B;">Upsloping</label>
+            <br>
+            <input type="radio" id="1" name="slope" value=2>
+            <label for="slope" style="color:#52057B;">Flat</label>
+            <br>
+            <input type="radio" id="2" name="slope" value=3>
+            <label for="slope" style="color:#52057B;">Downsloping</label>
+            <br><hr>
+            </div>
+
+            <div class="form-group">
+              <label for="ca">Number of major blood vessels</label><br>
+              <input type="radio" id="0" name="ca" value=0>
+              <label for="ca" style="color:#52057B;">0</label>
+
+              <input type="radio" id="1" name="ca" value=1>
+              <label for="ca" style="color:#52057B;">1</label>
+
+              <input type="radio" id="2" name="ca" value=2>
+              <label for="ca" style="color:#52057B;">2</label>
+
+              <input type="radio" id="3" name="ca" value=3>
+              <label for="ca" style="color:#52057B;">3</label>
+              <br><hr>
+
+              </div>
+
+
+              <div class="form-group">
+                <label for="thal">Thalassemia</label><br>
+                <input type="radio" id="0" name="thal" value=1>
+                <label for="thal" style="color:#52057B;">Normal</label>
+                <br>
+                <input type="radio" id="1" name="thal" value=2>
+                <label for="thal" style="color:#52057B;">Fixed defect</label>
+                <br>
+                <input type="radio" id="2" name="thal" value=3>
+                <label for="thal" style="color:#52057B;">Reversible defect</label>
+                <br><hr>
+                </div>
+
+    
+                <div align = "center">
+                  <input type = "submit",value = "Submit" style="background-color:#52057B;color:white">
+                </div>
+  </form>
+</div>
+
+
+
+
+</body>
+</html>
