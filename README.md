@@ -3,6 +3,10 @@
 ## Overview
 The Heart Disease Prediction and Explainable AI project is a web-based application built with Flask that predicts the likelihood of heart disease based on user-provided health parameters. It utilizes multiple machine learning models for prediction, including Logistic Regression, Support Vector Machine (SVM), Decision Tree, Random Forest, XGBoost (XGB), and an Artificial Neural Network (ANN). Additionally, the project employs LIME (Local Interpretable Model-Agnostic Explanations) to provide explanations for model predictions, enhancing transparency and understanding.
 
+## Sample screenshots
+![Interface](./heart_output.png)
+![Output](./heart_output2.png)
+
 ## Features
 - Predicts the presence of heart disease based on user input, including age, gender, chest pain type, blood pressure, cholesterol levels, sugar levels, ECG results, heart rate, exercise-induced angina, oldpeak, slope, number of major vessels, and thalassemia.
 - Utilizes multiple machine learning models for prediction, allowing users to see predictions from different models.
